@@ -1,0 +1,66 @@
+
+
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #616161;
+    margin: 0;
+    padding: 0;
+}
+
+/* Google Logo */
+.logo {
+    font-size: 60px;
+    font-weight: bold;
+    color: #42857F;
+    margin-top: 100px;
+    animation: fadein 1.5s ease-in-out;
+}
+
+/* Search Box */
+.search-box {
+    width: 400px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Glowing Effect on Focus */
+.search-box:focus {
+    border-color: #00b8d4;
+    box-shadow: 0 0 10px #4285F00;
+}
+
+/* Search Button */
+.search-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #4285F4;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button Hover Effect */
+.search-btn:hover {
+    background-color: #3367D6;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
