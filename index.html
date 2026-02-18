@@ -1,51 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akhilesh.com</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLS DONATE - Donators</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff00cc, #3333ff);
+        color: white;
+        text-align: center;
+    }
+
+    header {
+        padding: 20px;
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        background: rgba(0,0,0,0.3);
+    }
+
+    .container {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.1);
+        border-radius: 15px;
+        padding: 20px;
+        width: 220px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .name {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .amount {
+        font-size: 18px;
+        color: #00ffcc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .robux-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer {
+        margin-top: 30px;
+        padding: 15px;
+        background: rgba(0,0,0,0.3);
+        font-size: 14px;
+    }
+</style>
 </head>
+
 <body>
-    <header>
-        <div class="logo">Akhilesh</div>
-        <nav>
-            <ul>
-                <li><a href="https://www.google.com" target="_blank">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h1>Welcome to My Website</h1>
-        <p>Modern, Responsive, and Fast</p>
-        <a href="#services"><button class="cta-button">Get Started</button></a>
-    </section>
+<header>PLS DONATE - TOP DONATORS</header>
 
-    <section class="grid-section" id="about">
-        <h2>Why Choose Us?</h2>
-        <div class="grid-container">
-            <div class="grid-item">Fast</div>
-            <div class="grid-item">Responsive</div>
-            <div class="grid-item">Secure</div>
-        </div>
-    </section>
-    
-    <section class="grid-section" id="services">
-        <h2>Our Services</h2>
-        <div class="grid-container">
-            <div class="grid-item">Web Development</div>
-            <div class="grid-item">App Development</div>
-            <div class="grid-item">SEO Optimization</div>
-        </div>
-    </section>
+<div class="container" id="donatorContainer"></div>
 
-    <footer id="contact">
-        <p>© 2025 Akhilesh. All rights reserved.</p>
-    </footer>
+<footer>Made with gratitude 💚</footer>
+
+<script>
+    // 🔹 EDIT THIS LIST TO ADD NEW DONATORS
+    const donators = [
+        { name: "Acrobatic", amount: 200 },
+        { name: "RichKing", amount: 500 },
+        { name: "LegendYT", amount: 120 }
+    ];
+
+    const container = document.getElementById("donatorContainer");
+
+    donators.forEach(donator => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+            <div class="name">${donator.name}</div>
+            <div class="amount">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Robux_2019_Logo_gold.svg" class="robux-icon">
+                ${donator.amount} Robux
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+</script>
+
 </body>
 </html>
