@@ -91,84 +91,8 @@
 <footer>Made with gratitude 💚</footer>
 
 <script>
-    // 🔹 EDIT THIS LIST TO ADD NEW DONATORS
     const donators = [
-        { name: "me", amount: 0, avatar: "example.png" }
-        ];
-
-    const container = document.getElementById("donatorContainer");
-
-    donators.forEach(donator => {
-        const card = document.createElement("div");
-        card.className = "card";
-
-        card.innerHTML = `
-            <img src="${donator.avatar}" class="avatar">
-            <div class="name">${donator.name}</div>
-            <div class="amount">
-                <img src="robux.png" class="robux-icon">
-                ${donator.amount} Robux
-            </div>
-        `;
-
-        container.appendChild(card);
-    });
-</script>
-
-</body>
-</html>        width: 220px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-        transition: transform 0.3s;
-    }
-
-    .card:hover {
-        transform: scale(1.05);
-    }
-
-    .name {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .amount {
-        font-size: 18px;
-        color: #00ffcc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-    }
-
-    .robux-icon {
-        width: 20px;
-        height: 20px;
-    }
-
-    footer {
-        margin-top: 30px;
-        padding: 15px;
-        background: rgba(0,0,0,0.3);
-        font-size: 14px;
-    }
-</style>
-</head>
-
-<body>
-
-<header>PLS DONATE - TOP DONATORS</header>
-
-<div class="container" id="donatorContainer"></div>
-
-<footer>Made with gratitude 💚</footer>
-
-<script>
-    // 🔹 EDIT THIS LIST TO ADD NEW DONATORS
-    const donators = [
-        { name: "Acrobatic", amount: 200 },
-        { name: "RichKing", amount: 500 },
-        { name: "LegendYT", amount: 120 }
+        { name: "Me", amount: 0, avatar: "example.png" }
     ];
 
     const container = document.getElementById("donatorContainer");
@@ -178,6 +102,7 @@
         card.className = "card";
 
         card.innerHTML = `
+            <img src="${donator.avatar}" class="avatar">
             <div class="name">${donator.name}</div>
             <div class="amount">
                 <img src="robux.png" class="robux-icon">
