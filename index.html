@@ -3,146 +3,217 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PLS DONATE - Donators</title>
+<title>PLS DONATE - Legends</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(#6ec6ff, #b3e5ff);
-        text-align: center;
-    }
-
-    /* SIGN BOARD HEADER */
-    header {
-        display: inline-block;
-        margin-top: 40px;
-        padding: 20px 40px;
-        background: linear-gradient(#f7c46a, #e39b3c);
-        border: 6px solid #c57d22;
-        border-radius: 15px;
-        font-size: 32px;
-        font-weight: bold;
-        color: white;
-        text-shadow: 2px 2px 0 #8b4d00;
-        box-shadow: 0 8px 0 #a8641a;
-    }
-
-    .container {
-        margin-top: 50px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 30px;
-    }
-
-    /* CARD LOOKS LIKE BOOTH BOARD */
-    .card {
-        background: linear-gradient(#f7c46a, #e39b3c);
-        border: 5px solid #c57d22;
-        border-radius: 20px;
-        width: 240px;
-        padding: 25px;
-        box-shadow: 0 8px 0 #a8641a;
-        transition: all 0.3s ease;
-    }
-
-    /* HOVER = GREEN BUTTON STYLE */
-    .card:hover {
-        background: #00ff66;
-        border-color: #00cc55;
-        box-shadow: 0 0 20px #00ff66;
-        transform: scale(1.05);
-    }
-
-    .avatar {
-        width: 75px;
-        height: 75px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 10px;
-        border: 3px solid white;
-    }
-
-    .name {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: white;
-        text-shadow: 1px 1px 0 #8b4d00;
-    }
-
-    .amount {
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        color: white;
-        font-weight: bold;
-    }
-
-    .robux-icon {
-        width: 20px;
-        height: 20px;
-    }
-
-    footer {
-        margin-top: 60px;
-        padding: 15px;
-        font-size: 14px;
-        color: #333;
-    } 
-    .signature-board {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 15px 30px;
-    background: linear-gradient(#f7c46a, #e39b3c);
-    border: 4px solid #c57d22;
-    border-radius: 12px;
-    box-shadow: 0 6px 0 #a8641a;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#0f0f0f, #1c1c1c);
+    text-align: center;
     color: white;
+}
+
+/* HEADER */
+header {
+    margin-top: 40px;
+    font-size: 38px;
     font-weight: bold;
-    text-shadow: 1px 1px 0 #8b4d00;
-    }
+    color: white;
+    text-shadow: 0 0 15px #ffd700;
+    animation: glow 2s infinite alternate;
+
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 12px;
+
+    background: #1a1a1a;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ffd700; }
+    to { text-shadow: 0 0 30px orange; }
+}
+
+.total-box {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* CARD */
+.card {
+    position: relative;
+    background: linear-gradient(#2a2a2a, #1f1f1f);
+    border: 3px solid #333;
+    border-radius: 20px;
+    width: 240px;
+    padding: 25px;
+    box-shadow: 0 8px 0 #111;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.08);
+}
+
+/* SHINE EFFECT */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+    transform: rotate(25deg);
+    transition: 0.7s;
+}
+
+.card:hover::before {
+    top: 100%;
+}
+
+/* TOP 3 STYLES */
+.gold {
+    border-color: #ffd700;
+    box-shadow: 0 0 20px #ffd700;
+}
+
+.silver {
+    border-color: #c0c0c0;
+    box-shadow: 0 0 20px #c0c0c0;
+}
+
+.bronze {
+    border-color: #cd7f32;
+    box-shadow: 0 0 20px #cd7f32;
+}
+
+/* ELITE 1000+ */
+.elite {
+    box-shadow: 0 0 30px #ffd700;
+    border-color: #ffd700;
+}
+
+.avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid white;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.amount {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.badge {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* SIGNATURE BOARD */
+.signature-board {
+    margin-top: 50px;
+    padding: 15px 30px;
+    background: #1a1a1a;
+    border: 2px solid #ffd700;
+    border-radius: 12px;
+    display: inline-block;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
 </style>
 </head>
 
 <body>
 
-<header>PLS DONATE - TOP DONATORS</header>
+<header>HALL OF DONATION</header>
+
+<div class="total-box">Total Raised: <span id="total">0</span> Robux 💎</div>
 
 <div class="container" id="donatorContainer"></div>
+
 <div class="signature-board">
     Username: akhil3721 <br>
-    NAME: AKHILTHESUS  <br>
-    Donate To Get Added
+    NAME: AKHILTHESUS <br>
+    💎 Donate to get added 💎 
 </div>
-<footer>Made with gratitude 💚</footer>
+
+<footer>Donate To Get Immortalized 👑</footer>
 
 <script>
-    const donators = [
-        { name: "xyxn", amount:10, avatar: "xyxn.png" }, 
-        { name: "chin", amount: 2, avatar: "chin.png" }
-         ];
+const donators = [
+    { name: "xyxn", amount: 10, avatar: "xyxn.png" },
+    { name: "chin", amount: 2, avatar: "chin.png" },
+    ];
 
-    const container = document.getElementById("donatorContainer");
+// SORT HIGH TO LOW
+donators.sort((a, b) => b.amount - a.amount);
 
-    donators.forEach(donator => {
-        const card = document.createElement("div");
-        card.className = "card";
+const container = document.getElementById("donatorContainer");
+const totalDisplay = document.getElementById("total");
 
-        card.innerHTML = `
-            <img src="${donator.avatar}" class="avatar">
-            <div class="name">${donator.name}</div>
-            <div class="amount">
-                <img src="robux.png" class="robux-icon">
-                ${donator.amount} Robux
-            </div>
-        `;
+let total = 0;
 
-        container.appendChild(card);
-    });
+donators.forEach((donator, index) => {
+    total += donator.amount;
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    if (index === 0) card.classList.add("gold");
+    if (index === 1) card.classList.add("silver");
+    if (index === 2) card.classList.add("bronze");
+
+    if (donator.amount >= 1000) {
+        card.classList.add("elite");
+    }
+
+    card.innerHTML = `
+        <img src="${donator.avatar}" class="avatar">
+        <div class="name">${index + 1}. ${donator.name}</div>
+        <div class="amount">${donator.amount} Robux</div>
+        ${donator.amount >= 1000 ? '<div class="badge">👑 ELITE DONATOR</div>' : ''}
+    `;
+
+    container.appendChild(card);
+});
+
+totalDisplay.textContent = total;
 </script>
 
 </body>
