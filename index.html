@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLS DONATE - Donators</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(#6ec6ff, #b3e5ff);
+        text-align: center;
+    }
+
+    /* SIGN BOARD HEADER */
+    header {
+        display: inline-block;
+        margin-top: 40px;
+        padding: 20px 40px;
+        background: linear-gradient(#f7c46a, #e39b3c);
+        border: 6px solid #c57d22;
+        border-radius: 15px;
+        font-size: 32px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 0 #8b4d00;
+        box-shadow: 0 8px 0 #a8641a;
+    }
+
+    .container {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    /* CARD LOOKS LIKE BOOTH BOARD */
+    .card {
+        background: linear-gradient(#f7c46a, #e39b3c);
+        border: 5px solid #c57d22;
+        border-radius: 20px;
+        width: 240px;
+        padding: 25px;
+        box-shadow: 0 8px 0 #a8641a;
+        transition: all 0.3s ease;
+    }
+
+    /* HOVER = GREEN BUTTON STYLE */
+    .card:hover {
+        background: #00ff66;
+        border-color: #00cc55;
+        box-shadow: 0 0 20px #00ff66;
+        transform: scale(1.05);
+    }
+
+    .avatar {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border: 3px solid white;
+    }
+
+    .name {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: white;
+        text-shadow: 1px 1px 0 #8b4d00;
+    }
+
+    .amount {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .robux-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer {
+        margin-top: 60px;
+        padding: 15px;
+        font-size: 14px;
+        color: #333;
+    } 
+    .signature-board {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 30px;
+    background: linear-gradient(#f7c46a, #e39b3c);
+    border: 4px solid #c57d22;
+    border-radius: 12px;
+    box-shadow: 0 6px 0 #a8641a;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #8b4d00;
+    }
+</style>
+</head>
+
+<body>
+
+<header>PLS DONATE - TOP DONATORS</header>
+
+<div class="container" id="donatorContainer"></div>
+<div class="signature-board">
+    Username: akhil3721 <br>
+    NAME: AKHILTHESUS  <br>
+    Donate To Get Added
+</div>
+<footer>Made with gratitude 💚</footer>
+
+<script>
+    const donators = [
+        { name: "xyxn", amount:10, avatar: "xyxn.png" }, 
+        { name: "chin", amount: 2, avatar: "chin.png" }
+         ];
+
+    const container = document.getElementById("donatorContainer");
+
+    donators.forEach(donator => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+            <img src="${donator.avatar}" class="avatar">
+            <div class="name">${donator.name}</div>
+            <div class="amount">
+                <img src="robux.png" class="robux-icon">
+                ${donator.amount} Robux
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+</script>
+
+</body>
+</html>
